@@ -2,4 +2,9 @@
 <p><%= @igloo.address %></p>
 <p><%= @igloo.description %></p>
 
+<%= link_to "Delete #{@igloo.name}",
+      igloo_path(@igloo),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
 <%= link_to "back to the list", igloos_path %>

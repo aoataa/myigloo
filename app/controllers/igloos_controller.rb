@@ -29,6 +29,12 @@ class IgloosController < ApplicationController
     @igloo.update(igloo_params)
   end
 
+  def destroy
+    @igloo = Igloo.find(params[:id])
+    @igloo.destroy
+    redirect_to igloos_path(@igloo)
+  end
+
   private
 
   def igloo_params
