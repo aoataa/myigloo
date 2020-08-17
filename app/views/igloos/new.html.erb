@@ -1,0 +1,9 @@
+<h1> Add an igloo </h1>
+
+
+<%= simple_form_for(@igloo) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
