@@ -5,7 +5,8 @@ class IgloosController < ApplicationController
   end
 
   def show
-    @igloo = Igloo.find(:id)
+
+    @igloo = Igloo.find(params[:id])
   end
 
   def new
@@ -13,11 +14,31 @@ class IgloosController < ApplicationController
   end
 
   def create
-    @igloo = Igloo.new
-    if @igloo.save
-      redirect_to igloos_path
-    else
-      render 'new'
-    end
+    @igloo = Igloo.new(igloo_params)
+    @igloo.user = current_user
+    @igloo.save
+    redirect_to igloo_path(@igloo)
   end
+
+  def edit
+    @igloo = Igloo.find(params[:id])
+  end
+
+  def update
+    @igloo = Igloo.find(params[:id])
+    @igloo.update(igloo_params)
+  end
+
+  def destroy
+    @igloo = Igloo.find(params[:id])
+    @igloo.destroy
+    redirect_to igloos_path(@igloo)
+  end
+
+  private
+
+  def igloo_params
+    params.require(:igloo).permit(:name, :address, :description)
+  end
+
 end
