@@ -1,0 +1,2 @@
+class Igloo < ApplicationRecord
+end
