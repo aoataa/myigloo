@@ -2,8 +2,6 @@
 
     <% @igloos.each do |igloo| %>
     <p><%=igloo.name%></p>
-    <p><%= igloo.address %></p>
-    <p><%= igloo.description %></p>
     <% end %>
 
 <%=link_to "Add new Igloo", new_igloo_path %>
