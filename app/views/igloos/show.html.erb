@@ -2,9 +2,20 @@
 <p><%= @igloo.address %></p>
 <p><%= @igloo.description %></p>
 
+
+  <% if policy(@igloo).edit? %>
+    <%= link_to "Update", edit_igloo_path(@igloo) %>
+  <% end %>
+
+
+
+  <% if policy(@igloo).destroy? %>
 <%= link_to "Delete #{@igloo.name}",
       igloo_path(@igloo),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+ <% end %>
+
+
 
 <%= link_to "back to the list", igloos_path %>
