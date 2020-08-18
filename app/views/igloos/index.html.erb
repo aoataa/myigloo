@@ -1,16 +1,9 @@
-
-<<<<<<< HEAD
-    <% @igloos.each do |igloo| %>
-    <p><%= link_to igloo.name, igloo_path(igloo) %></p>
-=======
-
 <div class="container">
   <h1> Accueil/ Index </h1>
   <% @igloos.each do |igloo| %>
     <%= link_to igloo_path(igloo) do %>
       <p><%= igloo.name %></p>
       <%= cl_image_tag igloo.photos.first.key, height: 300, width: 400, crop: :fill %>
->>>>>>> master
     <% end %>
   <% end %>
 
