@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :igloo
   
   # validates :user, uniqueness: { scope: :igloo }
-  validates :check_in, :check_out, presence: true
-  validate :check_out_after_check_in
+  validates :check_in, presence: true
+  validates :check_out, presence: true
 end
+
