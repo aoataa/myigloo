@@ -7,6 +7,8 @@ class BookingsController < ApplicationController
     def new         
         @igloo = Igloo.find(params[:igloo_id]
         @booking = Booking.new
+        booking_dates = []
+        @igloo.bookings.each do |booking|
     end 
 
     def create
@@ -20,6 +22,11 @@ class BookingsController < ApplicationController
             flash[:alert] = "Please provide valid dates"
             redirect_to igloo_path(@igloo)
         end
+    end
+
+    def show
+        @booking = Booking.find(params[:id])
+        @user = @booking.user
     end
 
     private 
