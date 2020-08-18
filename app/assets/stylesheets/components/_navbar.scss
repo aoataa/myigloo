@@ -30,10 +30,32 @@
   border-color: white;
   position: absolute;
   right: 50%;
-  box-shadow: 0 8px 6px -6px grey;
+  box-shadow: 0px 8px 6px -6px grey;
   box-shadow: 2px 4px 10px #347AB8;
+}
+
+.logo:hover {
+  box-shadow: 2px 4px 10px white;
+  filter: blur(2px);
+
 }
 
 .notice {
   margin-bottom: 0px;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    right: 70%;
+}
+  .navbar-expand-sm .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+}
+
+@media (max-width: 1600px) {
+  .navbar-expand-sm .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
 }

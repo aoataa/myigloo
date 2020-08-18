@@ -18,3 +18,13 @@
   box-shadow: 2px 3px 10px white;
 }
 
+.file {
+color : white;
+}
+
+@media (max-width: 600px) {
+  .simpleform-igloo {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+}
