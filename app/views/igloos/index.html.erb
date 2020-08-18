@@ -1,7 +1,7 @@
 <h1> Accueil/ Index </h1>
 
     <% @igloos.each do |igloo| %>
-    <p><%= link_to igloo.name, igloos_path(igloo) %></p>
+    <p><%= link_to igloo.name, igloo_path(igloo) %></p>
     <% end %>
 
 <% if policy(Igloo).create? %>
