@@ -1,10 +1,21 @@
-<h1> Accueil/ Index </h1>
 
+<<<<<<< HEAD
     <% @igloos.each do |igloo| %>
-    <p><%= link_to igloo.name, igloos_path(igloo) %></p>
-    <% end %>
+    <p><%= link_to igloo.name, igloo_path(igloo) %></p>
+=======
 
-<% if policy(Igloo).create? %>
-  <%=link_to "Add new Igloo", new_igloo_path %>
-<% end %>
+<div class="container">
+  <h1> Accueil/ Index </h1>
+  <% @igloos.each do |igloo| %>
+    <%= link_to igloo_path(igloo) do %>
+      <p><%= igloo.name %></p>
+      <%= cl_image_tag igloo.photos.first.key, height: 300, width: 400, crop: :fill %>
+>>>>>>> master
+    <% end %>
+  <% end %>
+
+  <% if policy(Igloo).create? %>
+    <%=link_to "Add new Igloo", new_igloo_path %>
+  <% end %>
+</div>
 

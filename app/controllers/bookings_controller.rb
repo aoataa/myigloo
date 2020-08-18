@@ -1,14 +1,18 @@
 class BookingsController < ApplicationController
-    
+    before_action :set_igloo, only: [:create]
+    before_action :set_booking, only: [:show, :destroy]
+
     def index
         @bookings = booking.all
     end
 
     def new         
-        @igloo = Igloo.find(params[:igloo_id]
+        @igloo = Igloo.find(params[:igloo_id])
         @booking = Booking.new
         booking_dates = []
         @igloo.bookings.each do |booking|
+        booking_dates << [booking.check_in, booking.check_out]
+        end
     end 
 
     def create
@@ -28,6 +32,11 @@ class BookingsController < ApplicationController
         @booking = Booking.find(params[:id])
         @user = @booking.user
     end
+
+    def destroy
+        @booking.destroy
+        redirect_to bookings_path
+      end
 
     private 
 
