@@ -35,6 +35,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 # Add devise
 gem 'devise'
+# gem pundit
+gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'

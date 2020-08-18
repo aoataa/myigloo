@@ -1,0 +1,15 @@
+<h1>Edit igloo</h1>
+
+<%= simple_form_for(@igloo) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+
+<hr>
+<%= link_to igloos_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
+
