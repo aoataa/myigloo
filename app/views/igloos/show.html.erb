@@ -1,3 +1,7 @@
+<% @igloo.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <p><%= @igloo.name %></p>
 <p><%= @igloo.address %></p>
 <p><%= @igloo.description %></p>
@@ -19,3 +23,5 @@
 
 
 <%= link_to "back to the list", igloos_path %>
+
+
