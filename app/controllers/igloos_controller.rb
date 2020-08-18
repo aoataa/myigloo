@@ -7,7 +7,6 @@ class IgloosController < ApplicationController
   end
 
   def show
-    @igloo = Igloo.find(params[:id])
   end
 
   def new

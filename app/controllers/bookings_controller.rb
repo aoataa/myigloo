@@ -7,10 +7,12 @@ class BookingsController < ApplicationController
     end
 
     def new         
-        @igloo = Igloo.find(params[:igloo_id]
+        @igloo = Igloo.find(params[:igloo_id])
         @booking = Booking.new
         booking_dates = []
         @igloo.bookings.each do |booking|
+        booking_dates << [booking.check_in, booking.check_out]
+        end
     end 
 
     def create
