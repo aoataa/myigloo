@@ -1,14 +1,4 @@
-<div class="container">
-  <h1> Accueil/ Index </h1>
-  <% @igloos.each do |igloo| %>
-    <%= link_to igloo_path(igloo) do %>
-      <p><%= igloo.name %></p>
-      <%= cl_image_tag igloo.photos.first.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  <% end %>
 
-  <% if policy(Igloo).create? %>
-    <%=link_to "Add new Igloo", new_igloo_path %>
-  <% end %>
+<div class="map-index">
+    <%= render 'shared/maps' %>
 </div>
-
