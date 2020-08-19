@@ -1,38 +1,37 @@
-<% @igloo.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+ 
+<div class="bannershow" style="background-image: url('<%= cl_image_path(@igloo.photos.first.key) %>');">
+   <div class="container">
+   </div>
 
-<div class="igloo-container margin-nav">
-  <div class="igloo-container-left">
-    <div class="show-title igloo">
-      <h3><%= @igloo.address %></h3>
-      <%= link_to igloos_path do %>
+</div>
 
-      <% end %>
-    </div>
 
-<p><%= @igloo.name %></p>
-<p><%= @igloo.address %></p>
-<p><%= @igloo.description %></p>
+<div class="notification">
+
+  <div class="notification-content">
+    <h2><strong><p><%= @igloo.name %></p></strong></h2>
+    <h2><p><%= @igloo.address %></p></h2>
+    <p><%= @igloo.description %></p>
+  </div>
+
+  <div class="notification-actions">
+  <%# <i class="fas fa-pencil-alt"></i>
+  <i class="far fa-trash-alt"></i> %>
+
+
 
 
   <% if policy(@igloo).edit? %>
     <%= link_to "Update", edit_igloo_path(@igloo) %>
   <% end %>
 
-
-
   <% if policy(@igloo).destroy? %>
-<%= link_to "Delete #{@igloo.name}",
+<%= link_to "Delete",
       igloo_path(@igloo),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
  <% end %>
-
-
-
-<%= link_to "back to the list", igloos_path %>
-
   </div>
 </div>
+<%= link_to "back to the list", igloos_path %>
 
