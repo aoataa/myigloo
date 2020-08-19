@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Igloo</title>
-  </head>
-  <body>
-  <div class="titre">
-    <h1>Make your booking</h1>
-  </div>
-  <div class="container d-flex">
-    <div class="cardsigloo">
-      <% @igloos.each do |igloo| %>
-        <div class="igloo-card">
-          <div class="igloo-image">
-            <%= link_to igloo_path(igloo) do %>
-            <%= cl_image_tag igloo.photos.first.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-          </div>
-          <div class="igloo-name">
-           <p><%= igloo.name %></p>
-          </div>
+<div class="titre">
+  <h1>Make your booking</h1>
+</div>
+<div class="d-flex">
+  <div class="cardsigloo">
+    <% @igloos.each do |igloo| %>
+      <div class="igloo-card">
+        <div class="igloo-image">
+          <%= link_to igloo_path(igloo) do %>
+          <%= cl_image_tag igloo.photos.first.key %>
+          <% end %>
         </div>
-      <% end %>
-    <div class="map-index">
-      <%= render 'shared/maps' %>
-    </div>
-  </body>
-</html>
+        <div class="igloo-name">
+         <p><%= igloo.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= render 'shared/maps' %>
+</div>
+
 
