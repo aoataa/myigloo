@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+}
+
+.cardsigloo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 1px #A8A8A8;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #A8A8A8;
+    padding: 10px;
+}
+
+.igloo-card {
+    position: relative;
+}
+
+.igloo-name {
+    position: absolute;
+    top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.titre {
+    width: 800px;
+    margin: 80px auto;
+
+  & h1 {
+        text-align: center;
+        font-family: 'Boogaloo', cursive;
+        font-size: 56px;
+        color: 	#A8A8A8;
+        text-shadow: 1px 1px 1px#989898;
+    }
+}
+
+.igloo-name p {
+    font-family: 'Boogaloo', cursive;
+    font-size: 48px;
+    color: #F0F0F0;
+    text-shadow: 1px 1px 1px	#787878;
+}

@@ -1,16 +1,16 @@
 <div class="container-simpleform">
   <div class="simpleform-igloo">
-  <h1> Add an igloo </h1>
+  <h1 class="title_form"> Add an igloo </h1>
 
     <%= simple_form_for(@igloo) do |f| %>
       <%= f.input :name, placeholder: "Name", label: false %>
       <%= f.input :address, placeholder: "address", label: false %>
       <%= f.input :description, placeholder: "description", label: false %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit %>
+      <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
+      <%= f.submit 'create Igloo', class: 'btn btn-igloo' %>%>
+
     <% end %>
 
-    <%= link_to "back to the list", igloos_path %>
   </div>
 </div>
 

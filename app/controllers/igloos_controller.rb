@@ -4,6 +4,16 @@ class IgloosController < ApplicationController
 
   def index
     @igloos = policy_scope(Igloo)
+    @igloos = Igloo.geocoded
+
+    @markers = @igloos.map do |igloo|
+      {
+        lat: igloo.latitude,
+        lng: igloo.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { igloo: igloo })
+      }
+
+    end
   end
 
   def show
@@ -46,6 +56,11 @@ class IgloosController < ApplicationController
     @igloo.destroy
      redirect_to igloos_path(@igloo)
 
+  end
+
+  def dashboard
+    @user_igloos = Igloo.where(user: current_user)
+    authorize :igloo
   end
 
   private
