@@ -20,4 +20,8 @@ class IglooPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def dashboard?
+    true
+  end
 end
