@@ -1,0 +1,8 @@
+
+<div class="container">
+  <% @user_igloos.each do |igloo|  %>
+    <%= igloo.name %>
+    <%= igloo.address %>
+    <%= cl_image_tag igloo.photos.first.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+</div>

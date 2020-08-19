@@ -6,14 +6,14 @@ class BookingsController < ApplicationController
         @bookings = booking.all
     end
 
-    def new         
+    def new
         @igloo = Igloo.find(params[:igloo_id])
         @booking = Booking.new
         booking_dates = []
         @igloo.bookings.each do |booking|
         booking_dates << [booking.check_in, booking.check_out]
         end
-    end 
+    end
 
     def create
         @booking = Booking.new(booking_params)
@@ -38,7 +38,7 @@ class BookingsController < ApplicationController
         redirect_to bookings_path
       end
 
-    private 
+    private
 
     def booking_params
         params.require(:booking).permit(:check_in, :check_out, :igloo_id)

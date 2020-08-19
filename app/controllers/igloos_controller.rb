@@ -58,6 +58,11 @@ class IgloosController < ApplicationController
 
   end
 
+  def dashboard
+    @user_igloos = Igloo.where(user: current_user)
+    authorize :igloo
+  end
+
   private
 
   def set_igloo
