@@ -2,6 +2,15 @@
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
+<div class="igloo-container margin-nav">
+  <div class="igloo-container-left">
+    <div class="show-title igloo">
+      <h3><%= @igloo.address %></h3>
+      <%= link_to igloos_path do %>
+
+      <% end %>
+    </div>
+
 <p><%= @igloo.name %></p>
 <p><%= @igloo.address %></p>
 <p><%= @igloo.description %></p>
@@ -24,4 +33,6 @@
 
 <%= link_to "back to the list", igloos_path %>
 
+  </div>
+</div>
 
