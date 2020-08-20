@@ -1,12 +1,8 @@
-class IglooPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
-  end
-
-  def new?
-    true
   end
 
   def create?
@@ -23,9 +19,5 @@ class IglooPolicy < ApplicationPolicy
 
   def destroy?
     record.user == user
-  end
-
-  def dashboard?
-    true
   end
 end
