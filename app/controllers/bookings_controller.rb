@@ -21,17 +21,15 @@ class BookingsController < ApplicationController
 
   def create
       @booking = Booking.new(booking_params)
-      # @booking_user = current_user
-      @user = User.find(params[:user_id])
-      @booking.user = @user
-      if booking.save
-          redirect_to booking_path(@booking)
+      @igloo = Igloo.find(params[:igloo_id])
+      @booking.igloo = @igloo
+      @booking.user = current_user
+      if @booking.save
+          redirect_to igloo_path(@igloo)
       else
           flash[:alert] = "Please provide valid dates"
           redirect_to igloo_path(@igloo)
       end
-      authorize @booking
-      authorize @igloo
   end
 
   def show
