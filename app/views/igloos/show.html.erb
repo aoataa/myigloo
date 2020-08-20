@@ -15,23 +15,25 @@
         <%= image_tag "https://res.cloudinary.com/aoataa/image/upload/v1597679019/Bonhomme-de-neige-fondu-FB_corarq.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
     </div>
+
     <h2 class="card-trip-pricing">99€</h2>
 
     <div class="card-trip-infos">
         <h2><strong><p><%= @igloo.name %></p></strong></h2>
-        <p><%= @igloo.description %> Au cœur des Pyrénées, sur le domaine de Gourette, la nuit devient nordique : un igloo vous servira de refuge. Équipé d’un matelas et d’un sac de couchage vous profiterez d’un abri hors du commun.</p>
-        <p><%= @igloo.address %> 73700 rue du Val Claret</p>
+        <p><%= @igloo.description %></p>
+        <p><%= @igloo.address %></p>
 
     </div>
 
+    <% if policy(@igloo).edit? %>
     <div class="update btn btn-igloo">
-          <% if policy(@igloo).edit? %>
+
             <%= link_to "Update", edit_igloo_path(@igloo) %>
           <% end %>
     </div>
-
+      <% if policy(@igloo).destroy? %>
     <div class="delete btn btn-igloo">
-          <% if policy(@igloo).destroy? %>
+
               <%= link_to "Delete",
                     igloo_path(@igloo),
                     method: :delete,
