@@ -1,20 +1,31 @@
-<div class="titre">
-  <h1>Make your booking</h1>
-</div>
 <div class="d-flex">
-  <div class="cardsigloo">
-    <% @igloos.each do |igloo| %>
-      <div class="igloo-card">
-        <div class="igloo-image">
-          <%= link_to igloo_path(igloo) do %>
-          <%= cl_image_tag igloo.photos.first.key %>
-          <% end %>
+  <div>
+    <div class="titre">
+      <h1>Make your booking</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum aspernatur, laborum, similique consequatur nihil quaerat distinctio repellendus architecto blanditiis voluptate animi vitae obcaecati excepturi eligendi quidem veniam. Velit, animi quaerat.</p>
+    </div>
+    <div class="cardsigloo">
+      <% @igloos.each do |igloo| %>
+        <div class="igloo-card">
+          <div class="igloo-image">
+            <%= link_to igloo_path(igloo) do %>
+            <%= cl_image_tag igloo.photos.first.key %>
+            <% end %>
+          </div>
+          <div class="igloo-name">
+            <h3><%= igloo.name %></h3>
+            <p>Lorem ipsum description igloo on few line </p>
+            <div class="star_icons">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
         </div>
-        <div class="igloo-name">
-         <p><%= igloo.name %></p>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
   <%= render 'shared/maps' %>
 </div>
