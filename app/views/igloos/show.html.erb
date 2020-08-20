@@ -9,12 +9,7 @@
 <div class="notification">
 
     <div class="nav-item dropdown">
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, transformation: [{ height: 400, width: 400, gravity: :face, radius: :max, crop: :crop }, {width: 40, crop: :scale}], class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% else %>
-        <%= image_tag "https://res.cloudinary.com/aoataa/image/upload/v1597679019/Bonhomme-de-neige-fondu-FB_corarq.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% end %>
-    </div>
+
     <h2 class="card-trip-pricing">99€</h2>
 
     <div class="card-trip-infos">
