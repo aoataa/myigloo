@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
   before_action :skip_authorization
   before_action :set_igloo, only: [:create]
-  before_action :set_booking, only: [:show, :destroy]
 
   def index
       @bookings = Booking.all
