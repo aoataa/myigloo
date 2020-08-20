@@ -2,13 +2,13 @@
   .notification {
     display: flex;
     align-items: center;
-    margin: 30px;
     height: 350px;
-    width: 900px;
+    width: 600px;
     position: relative;
     margin-bottom: 8px;
     padding: 8px 16px;
     border: 1px solid rgba(80, 137, 145, 0.4);
+    border-radius: 5px;
 
     .card-trip-pricing {
       position: absolute;
