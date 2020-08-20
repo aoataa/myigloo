@@ -4,52 +4,63 @@
 
 .cardsigloo {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px 2px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
     flex-grow: 1;
     align-items: center;
     justify-content: center;
-    text-shadow: 1px 1px 1px #A8A8A8;
     border-radius: 5px;
-    box-shadow: 0 0 5px #A8A8A8;
-    padding: 10px;
+    padding: 0px 60px;
 }
 
 .igloo-card {
-    position: relative;
+    padding: 20px;
+    border: 1px solid rgba(80, 137, 145, 0.4);
+    border-radius: 4px;
+}
+
+.igloo-card:hover {
+    border: 1px solid rgba(80, 137, 145, 1);
 }
 
 .igloo-name {
-    position: absolute;
+/*     position: absolute;
     top: 50%;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    text-align: center;
+    text-align: center; */
 }
 
 .igloo-image img {
   width: 100%;
-  height: 300px;
+  max-height: 180px;
+  object-fit: cover;
 }
 
 .titre {
     width: 800px;
-    margin: 80px auto;
+    margin: 80px 60px 40px 60px;
 
   & h1 {
-        text-align: center;
-        font-family: 'Boogaloo', cursive;
-        font-size: 56px;
-        color: 	#A8A8A8;
-        text-shadow: 1px 1px 1px#989898;
+    font-size: 36px;
+    color: 	#02245C;
     }
 }
 
+.igloo-name h3 {
+    font-size: 20px;
+    color: #508991;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
 .igloo-name p {
-    font-family: 'Boogaloo', cursive;
-    font-size: 48px;
-    color: #F0F0F0;
-    text-shadow: 1px 1px 1px	#787878;
+    line-height: 1;
+}
+
+.star_icons {
+    color: #E08E45
+    text-align: right;
 }
