@@ -1,8 +1,22 @@
 
-<div class="container">
-  <% @user_igloos.each do |igloo|  %>
-    <%= igloo.name %>
-    <%= igloo.address %>
-    <%= cl_image_tag igloo.photos.first.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-</div>
+<div class="d-flex">
+  <div>
+    <div class="titre">
+      <h1>Your listing</h1>
+      <p>MyIgloo thank you to list your propriety</p> 
+      <p>Letting your igloo on MyIgloo enables you to generate more rental income and this 
+      is why an increasing number of owners are letting their property on MyIgloo.</p>
+    </div>
+    <div class="cardsigloo">
+      <% @user_igloos.each do |igloo|  %>
+        <div class="igloo-card">
+          <div class="igloo-image">
+              <%= cl_image_tag igloo.photos.first.key%>
+          </div>
+          <div class="igloo-name">
+            <h3><%= igloo.name %></h3>
+            <p><%= igloo.address %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
