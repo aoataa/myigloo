@@ -6,11 +6,11 @@
 <!-- card description-------------------------------------->
   <div class="notification">
       <div class="nav-item dropdown">
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, transformation: [{ height: 400, width: 400, gravity: :face, radius: :max, crop: :crop }, {width: 40, crop: :scale}], class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>
-          <%= image_tag "https://res.cloudinary.com/aoataa/image/upload/v1597679019/Bonhomme-de-neige-fondu-FB_corarq.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
+        <% if @igloo.user.photo.attached? %>
+        <%= cl_image_tag @igloo.user.photo.key, transformation: [{ height: 400, width: 400, gravity: :face, radius: :max, crop: :crop }, {width: 40, crop: :scale}], class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/aoataa/image/upload/v1597679019/Bonhomme-de-neige-fondu-FB_corarq.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% end %>
       </div>
 
       <h2 class="card-trip-pricing">99€</h2>
@@ -38,39 +38,11 @@
             <% end %>
       </div>
   </div>
-
-<div class="notification">
-
-    <div class="nav-item dropdown">
-      <% if @igloo.user.photo.attached? %>
-        <%= cl_image_tag @igloo.user.photo.key, transformation: [{ height: 400, width: 400, gravity: :face, radius: :max, crop: :crop }, {width: 40, crop: :scale}], class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% else %>
-        <%= image_tag "https://res.cloudinary.com/aoataa/image/upload/v1597679019/Bonhomme-de-neige-fondu-FB_corarq.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% end %>
-    <h2 class="card-trip-pricing">99€</h2>
-
-    <div class="card-trip-infos">
-        <h2><strong><p><%= @igloo.name %></p></strong></h2>
-        <p><%= @igloo.description %> Au cœur des Pyrénées, sur le domaine de Gourette, la nuit devient nordique : un igloo vous servira de refuge. Équipé d’un matelas et d’un sac de couchage vous profiterez d’un abri hors du commun.</p>
-        <p><%= @igloo.address %> 73700 rue du Val Claret</p>
-
-    </div>
-
-    <div class="update btn btn-igloo">
-          <% if policy(@igloo).edit? %>
-            <%= link_to "Update", edit_igloo_path(@igloo) %>
-          <% end %>
-    </div>
-
-    <div class="delete btn btn-igloo">
-          <% if policy(@igloo).destroy? %>
-              <%= link_to "Delete",
-                    igloo_path(@igloo),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-          <% end %>
-    </div>
 </div>
-  <%= render 'shared/maps' %>
+
+ <div id="map"
+       style="height: 100px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 
