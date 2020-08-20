@@ -14,10 +14,10 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.igloo.user == user
   end
 
   def destroy?
-    record.user == user
+    record.igloo.user == user
   end
 end
