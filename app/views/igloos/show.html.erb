@@ -1,10 +1,43 @@
 
-<div class="bannershow" style="background-image: url('<%= cl_image_path(@igloo.photos.first.key) %>');">
-  <div class="container">
-   </div>
+<div class="bannershow container" style="background-image: url('<%= cl_image_path(@igloo.photos.first.key) %>');">
 </div>
 
+<div class="container" id="padding0">
 <!-- card description-------------------------------------->
+  <div class="notification">
+      <div class="nav-item dropdown">
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, transformation: [{ height: 400, width: 400, gravity: :face, radius: :max, crop: :crop }, {width: 40, crop: :scale}], class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/aoataa/image/upload/v1597679019/Bonhomme-de-neige-fondu-FB_corarq.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+      </div>
+
+      <h2 class="card-trip-pricing">99€</h2>
+
+      <div class="card-trip-infos">
+          <h2><strong><p><%= @igloo.name %></p></strong></h2>
+          <p><%= @igloo.description %></p>
+          <p><i class="fas fa-map-marked-alt icon-color"></i> <%= @igloo.address %></p>
+
+      </div>
+
+      <% if policy(@igloo).edit? %>
+      <div class="update btn btn-igloo">
+
+              <%= link_to "Update", edit_igloo_path(@igloo) %>
+            <% end %>
+      </div>
+        <% if policy(@igloo).destroy? %>
+      <div class="delete btn btn-igloo">
+
+                <%= link_to "Delete",
+                      igloo_path(@igloo),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+            <% end %>
+      </div>
+  </div>
 
 <div class="notification">
 
@@ -34,6 +67,6 @@
           <% end %>
     </div>
 </div>
-<!-- Bouton updates et delete -->
-<%#= link_to "back to the list", igloos_path %>
+  <%= render 'shared/maps' %>
+
 

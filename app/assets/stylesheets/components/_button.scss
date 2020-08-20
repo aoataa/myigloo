@@ -25,6 +25,7 @@
   background: white;
   color: #02245C;
   box-shadow: 1px 1px 15px white;
+  border: 1px solid #02245C;
 }
 
 .btn-gradient {
@@ -40,4 +41,13 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.btn-igloo a {
+  text-decoration: none;
+  color: white;
+}
+.btn-igloo:hover a {
+  text-decoration: none;
+  color: #02245C;
 }
