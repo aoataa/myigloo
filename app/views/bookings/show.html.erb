@@ -3,14 +3,14 @@
   <div class="container">
     <div class="title">
       <h2>My booking</h2>
-      <%= link_to bookings_path do %>
-      <% end %>
+      <%#= link_to bookings_path do %>
+      <%# end %>
     </div>
 
 
     <div class="booking-content">
       <div class="book-info">
-        <h3><%= @igloo.address %></h3>
+        <h3><%#= @igloo.address %></h3>
         <div class="book-date">
           <h4>booked :</h4>
           <h4>from <%= @booking.check_in.strftime('%e %B %Y')%></h4>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="book-description">
-      <li><%= @igloo.description %></li>
+      <li><%#= @igloo.description %></li>
     </div>
   </div>
 </div>

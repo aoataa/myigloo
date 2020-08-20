@@ -12,11 +12,15 @@ class IgloosController < ApplicationController
         lng: igloo.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { igloo: igloo })
       }
-
-    end
+  end
   end
 
   def show
+    @markers = [{
+        lat: @igloo.latitude,
+        lng: @igloo.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { igloo: @igloo })
+      }]
   end
 
   def new
