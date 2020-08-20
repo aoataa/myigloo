@@ -68,7 +68,7 @@ puts " create users and igloos"
 
     file = URI.open('https://images.unsplash.com/photo-1582556825920-b6e7f6d7aa40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
     igloo_four = Igloo.new(
-      name: "Night Igloo",
+      name: "Blue Igloo",
       address: "Place du Slalom, Val Thorens",
       description: "L'expérience, l'expérience, l'expérience !
       Soyez au contact même de la nautre, de sa générosité ou aussi
@@ -92,7 +92,7 @@ puts " create users and igloos"
 
     file = URI.open('https://images.unsplash.com/photo-1517776511573-14890f775b54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
     igloo_six = Igloo.new(
-      name: "Blue Igloo",
+      name: "Night Igloo",
       address: "Le Bonnet, Plagne Bellecote",
       description: "entre eau et neige, une superbe situation pour un moment 
       hors du commun ! vous vous sentirez comme chez vous sous ce magnifique manteau neigeux
