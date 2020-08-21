@@ -2,10 +2,10 @@
   <div class="d-flex flex-column">
 
     <div class="card-product">
-      <%= cl_image_tag @booking.igloo.photos.first.key %>
+    
         <div class="card-product-infos">
-        <h2>Your booking</h2>
-        <p>Congratulations ! Your booking is now <strong>confirmed</strong></p>
+        <h2>Congratulations !</h2>
+        <p>Your booking is now <strong>confirmed</strong>&#127881;</p>
             <h4>From <em><%= @booking.check_in.strftime('%e %B %Y')%></em></h4>
             <h4>To <em><%= @booking.check_out.strftime('%e %B %Y')%></em></h4>
         </div>
@@ -29,7 +29,7 @@
         </div>
         <div class="igloo-name">
           <h3><%= @booking.igloo.name %></h3>
-          <p>Lorem ipsum description igloo on few line </p>
+          <p><%= @booking.igloo.description[0..70] %>...</p>
         <div class="star_icons">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
