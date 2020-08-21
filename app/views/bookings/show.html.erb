@@ -22,5 +22,13 @@
       <li><%#= @igloo.description %></li>
     </div>
   </div>
-</div>
 
+
+  <div class="card-product">
+    <%= cl_image_tag igloo.photos.first.key %>
+      <div class="card-product-infos">
+      <h2>Your booking</h2>
+      <p>Congratulations ! Your booking is now <strong>confirmed</strong></p>
+      </div>
+  </div>
+</div>
