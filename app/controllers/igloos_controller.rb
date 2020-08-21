@@ -76,7 +76,7 @@ class IgloosController < ApplicationController
   end
 
   def igloo_params
-    params.require(:igloo).permit(:name, :address, :description, photos: [])
+    params.require(:igloo).permit(:name, :address, :description, :price, photos: [])
   end
 
 end

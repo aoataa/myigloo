@@ -4,8 +4,9 @@
 
     <%= simple_form_for(@igloo) do |f| %>
       <%= f.input :name, placeholder: "Name", label: false %>
-      <%= f.input :address, placeholder: "address", label: false %>
-      <%= f.input :description, placeholder: "description", label: false %>
+      <%= f.input :address, placeholder: "Address", label: false %>
+      <%= f.input :description, placeholder: "Description", label: false %>
+      <%= f.input :price, placeholder: "Price", label: false %>
       <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
       <%= f.submit 'create Igloo', class: 'btn btn-igloo' %>
 

@@ -2,6 +2,17 @@
   display: flex;
   justify-content: center;
   width: 100vw;
+  height: calc(100vh - 70px);
+  background-image: url('https://cypriensports.com/wp-content/uploads/paysage-neige-les-houches.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.container-simpleform-myprofil {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
   background-image: url('https://cypriensports.com/wp-content/uploads/paysage-neige-les-houches.jpg');
   background-attachment: fixed;
   background-position: center;
