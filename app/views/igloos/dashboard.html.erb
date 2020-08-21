@@ -11,10 +11,13 @@
       <% @user_igloos.each do |igloo|  %>
         <div class="igloo-card">
           <div class="igloo-image">
+              <%= link_to igloo_path(igloo) do %>
               <%= cl_image_tag igloo.photos.first.key%>
+              <% end %>
           </div>
           <div class="igloo-name">
             <h3><%= igloo.name %></h3>
+            <h4><%= igloo.price %>€</h4>
             <p><%= igloo.address %></p>
           </div>
         </div>

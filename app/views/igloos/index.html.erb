@@ -1,8 +1,10 @@
 <div class="d-flex">
   <div>
     <div class="titre">
-      <h1>Make your booking</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum aspernatur, laborum, similique consequatur nihil quaerat distinctio repellendus architecto blanditiis voluptate animi vitae obcaecati excepturi eligendi quidem veniam. Velit, animi quaerat.</p>
+      <h1>Unique stays</h1>
+      <p>No reservation costs! Great Rates!</br>
+        Manage your bookings. Sign-in for the best MyIgloo experience. </br>
+        Plan a different kind of getaway to uncover the hidden gems near you.</p>
     </div>
     <div class="cardsigloo">
       <% @igloos.each do |igloo| %>
@@ -14,7 +16,8 @@
           </div>
           <div class="igloo-name">
             <h3><%= igloo.name %></h3>
-            <p>Lorem ipsum description igloo on few line </p>
+            <p><%= igloo.description[0..70] %>...</p>
+            <h4><%= igloo.price %>€</h4>
             <div class="star_icons">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>

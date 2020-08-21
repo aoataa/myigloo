@@ -14,6 +14,7 @@
 }
 
 .igloo-card {
+    height: 400px;
     padding: 20px;
     border: 1px solid rgba(80, 137, 145, 0.4);
     border-radius: 4px;
@@ -22,16 +23,6 @@
 .igloo-card:hover {
     border: 1px solid rgba(80, 137, 145, 1);
 }
-
-/* .igloo-name {
-    position: absolute;
-    top: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-} */
 
 .igloo-image img {
   width: 100%;
@@ -56,11 +47,19 @@
     margin-top: 10px;
 }
 
-.igloo-name p {
-    line-height: 1;
+/* .igloo-name p {
+    overflow-y: scroll;
+    max-height: 100px;
+} */
+
+.igloo-name h4 {
+    text-align: right;
+    color: #09BC8A;
+    font-size: 18px;
 }
 
 .star_icons {
     color: #E08E45;
     text-align: right;
 }
+

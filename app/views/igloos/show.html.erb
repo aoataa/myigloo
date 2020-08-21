@@ -2,7 +2,7 @@
 <div class="bannershow container" style="background-image: url('<%= cl_image_path(@igloo.photos.first.key) %>');">
 </div>
 
-<div class="container" id="padding0">
+<div class="container d-flex" id="padding0">
 <!-- card description-------------------------------------->
   <div class="notification">
       <div class="nav-item dropdown">
@@ -13,7 +13,7 @@
       <% end %>
       </div>
 
-      <h2 class="card-trip-pricing">99€</h2>
+      <h4 class="card-trip-pricing"><%= @igloo.price %>€</h4>
 
       <div class="card-trip-infos">
           <h2><strong><p><%= @igloo.name %></p></strong></h2>
@@ -38,16 +38,17 @@
             <% end %>
       </div>
   </div>
+    <div class="booker">
+      <%= simple_form_for [@igloo, @booking] do |f| %>
+          <i class="fas fa-calendar-alt calendar"></i>
+          <%= f.input :check_in %>
+          <i class="fas fa-calendar-alt calendar2"></i>
+           <%= f.input :check_out %>
+           <%= f.button :submit, "Book now", class: "btn btn btn-igloo" %>
+        <% end %>
+    </div>
 </div>
-  <div class="booker">
-    <%= simple_form_for [@igloo, @booking] do |f| %>
-        <i class="fas fa-calendar-alt"></i>
-        <%= f.input :check_in %>
-        <i class="fas fa-calendar-alt"></i>
-         <%= f.input :check_out %>
-        <%= f.button :submit, class: "btn btn-light"  %>
-      <% end %> -->
-  </div>
+
  <div id="map"
        style="height: 300px;"
        data-markers="<%= @markers.to_json %>"

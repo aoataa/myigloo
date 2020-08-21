@@ -4,3 +4,25 @@
 .icon-color {
   color: $light-blue;
 }
+
+.booker {
+  height: 350px;
+  width: 30%;
+  border: 1px solid rgba(80, 137, 145, 0.4);
+  margin-left: 250px;
+  position:relative;
+  padding: 30px;
+}
+.calendar {
+  position: absolute;
+  top: 35px;
+  right: 15px;
+}
+
+.calendar2{
+position: absolute;
+top: 130px;
+right: 15px;
+}
+
+
