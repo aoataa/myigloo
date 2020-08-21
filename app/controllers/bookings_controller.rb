@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
       @booking.igloo = @igloo
       @booking.user = current_user
       if @booking.save
-          redirect_to igloo_path(@igloo)
+          redirect_to igloo_booking_path(@igloo, @booking)
       else
           flash[:alert] = "Please provide valid dates"
           redirect_to igloo_path(@igloo)
