@@ -5,38 +5,36 @@
 <div class="container d-flex" id="padding0">
 <!-- card description-------------------------------------->
   <div class="notification">
-      <div class="nav-item dropdown">
-        <% if @igloo.user.photo.attached? %>
+    <div class="nav-item dropdown">
+      <% if @igloo.user.photo.attached? %>
         <%= cl_image_tag @igloo.user.photo.key, transformation: [{ height: 400, width: 400, gravity: :face, radius: :max, crop: :crop }, {width: 40, crop: :scale}], class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% else %>
         <%= image_tag "https://res.cloudinary.com/aoataa/image/upload/v1597679019/Bonhomme-de-neige-fondu-FB_corarq.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
-      </div>
+    </div>
 
-      <h4 class="card-trip-pricing"><%= @igloo.price %>€</h4>
+    <h4 class="card-trip-pricing"><%= @igloo.price %>€</h4>
 
-      <div class="card-trip-infos">
-          <h2><strong><p><%= @igloo.name %></p></strong></h2>
-          <p><%= @igloo.description %></p>
-          <p><i class="fas fa-map-marked-alt icon-color"></i> <%= @igloo.address %></p>
+    <div class="card-trip-infos">
+      <h2><strong><p><%= @igloo.name %></p></strong></h2>
+      <p><%= @igloo.description %></p>
+      <p><i class="fas fa-map-marked-alt icon-color"></i> <%= @igloo.address %></p>
+    </div>
 
-      </div>
-
-      <% if policy(@igloo).edit? %>
+    <% if policy(@igloo).edit? %>
       <div class="update btn btn-igloo">
-
-              <%= link_to "Update", edit_igloo_path(@igloo) %>
-            <% end %>
+        <%= link_to "Update", edit_igloo_path(@igloo) %>
       </div>
-        <% if policy(@igloo).destroy? %>
-      <div class="delete btn btn-igloo">
+    <% end %>
 
-                <%= link_to "Delete",
+    <% if policy(@igloo).destroy? %>
+      <div class="delete btn btn-igloo">
+          <%= link_to "Delete",
                       igloo_path(@igloo),
                       method: :delete,
                       data: { confirm: "Are you sure?" } %>
-            <% end %>
       </div>
+    <% end %>
   </div>
     <div class="booker">
       <%= simple_form_for [@igloo, @booking] do |f| %>
@@ -48,7 +46,6 @@
         <% end %>
     </div>
 </div>
-
  <div id="map"
        style="height: 300px;"
        data-markers="<%= @markers.to_json %>"
