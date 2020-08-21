@@ -21,6 +21,7 @@ class IgloosController < ApplicationController
         lng: @igloo.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { igloo: @igloo })
       }]
+    @booking = Booking.new
   end
 
   def new
