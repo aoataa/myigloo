@@ -1,34 +1,51 @@
 <div class="container">
+  <div class="d-flex flex-column">
 
-  <div class="container">
-    <div class="title">
-      <h2>My booking</h2>
-      <%#= link_to bookings_path do %>
-      <%# end %>
+    <div class="card-product">
+      <%= cl_image_tag @booking.igloo.photos.first.key %>
+        <div class="card-product-infos">
+        <h2>Your booking</h2>
+        <p>Congratulations ! Your booking is now <strong>confirmed</strong></p>
+            <h4>From <em><%= @booking.check_in.strftime('%e %B %Y')%></em></h4>
+            <h4>To <em><%= @booking.check_out.strftime('%e %B %Y')%></em></h4>
+        </div>
     </div>
 
-
+    <div class="container-booked">
+      <div class="title">
+        <%#= link_to bookings_path do %>
+        <%# end %>
+      </div>
     <div class="booking-content">
       <div class="book-info">
-        <h3><%#= @igloo.address %></h3>
-        <div class="book-date">
-          <h4>booked :</h4>
-          <h4>from <%= @booking.check_in.strftime('%e %B %Y')%></h4>
-          <h4>to <%= @booking.check_out.strftime('%e %B %Y')%></h4>
+          <h3><%#= @igloo.address %></h3>
+      <div class="book-date">
+
+      <div class="igloo-card">
+        <div class="igloo-image">
+          <%= link_to igloo_path(@booking.igloo) do %>
+          <%= cl_image_tag @booking.igloo.photos.first.key %>
+          <% end %>
+        </div>
+        <div class="igloo-name">
+          <h3><%= @booking.igloo.name %></h3>
+          <p>Lorem ipsum description igloo on few line </p>
+        <div class="star_icons">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
         </div>
       </div>
-    </div>
-    <div class="book-description">
-      <li><%#= @igloo.description %></li>
-    </div>
-  </div>
-
-
-  <div class="card-product">
-    <%= cl_image_tag igloo.photos.first.key %>
-      <div class="card-product-infos">
-      <h2>Your booking</h2>
-      <p>Congratulations ! Your booking is now <strong>confirmed</strong></p>
       </div>
+      </div>
+    </div>
+    </div>
   </div>
 </div>
+
+
+
+

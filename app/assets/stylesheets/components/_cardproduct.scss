@@ -1,26 +1,30 @@
 .card-product {
     overflow: hidden;
-    height: 120px;
+    height: 200px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
+    width: 1000px;
+    align-self: center;
+    margin: 40px;
   }
   
   .card-product img {
     height: 100%;
-    width: 120px;
+    width: 200px;
     object-fit: cover;
   }
   
   .card-product h2 {
-    font-size: 16px;
+    font-size: 30px;
     font-weight: bold;
     margin: 0;
+    text-align: center;
   }
   
   .card-product p {
-    font-size: 12px;
+    font-size: 25px;
     line-height: 1.4;
     opacity: .7;
     margin-bottom: 0;
@@ -28,5 +32,19 @@
   }
   
   .card-product .card-product-infos {
-    padding: 16px;
+    text-align: center;
+    margin: 15px;
+    margin-left: 150px;
+  }
+  
+  .card-product h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 15px;
+    text-align: center;
+  }
+
+  .igloo-card-show {
+      padding: 50px;
+      width: 500px;
   }
