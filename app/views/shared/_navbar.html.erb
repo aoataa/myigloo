@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
+  <%= link_to "igloos", class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/aoataa/image/upload/c_crop,r_max/v1597750403/igloo-d-isolement-sur-le-blanc-35744545_1_yqei2o.jpg", class: "logo" %>
   <% end %>
   <%#button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
         <%= link_to "", "/igloos", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+        <a class="nav-link" href="#"><%= current_user.first_name %></a>
       </li>
       <li class="nav-item dropdown">
         <% if current_user.photo.attached? %>
