@@ -1,0 +1,7 @@
+  <%= simple_form_for [@igloo, @booking] do |f| %>
+        <i class="fas fa-calendar-alt"></i>
+        <%= f.input :check_in %>
+        <i class="fas fa-calendar-alt"></i>
+         <%= f.input :check_out %>
+        <%= f.button :submit, class: "btn btn-light"  %>
+      <% end %>
