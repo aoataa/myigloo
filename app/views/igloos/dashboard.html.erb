@@ -3,8 +3,8 @@
   <div>
     <div class="titre">
       <h1>Your listing</h1>
-      <p>MyIgloo thank you to list your propriety</p> 
-      <p>Letting your igloo on MyIgloo enables you to generate more rental income and this 
+      <p>MyIgloo thank you to list your propriety</p>
+      <p>Letting your igloo on MyIgloo enables you to generate more rental income and this
       is why an increasing number of owners are letting their property on MyIgloo.</p>
     </div>
     <div class="cardsigloo">
@@ -18,7 +18,8 @@
           <div class="igloo-name">
             <h3><%= igloo.name %></h3>
             <h4><%= igloo.price %>€</h4>
-            <p><%= igloo.address %></p>
+            <p><%= igloo.description[0..70] %>...</p>
+            <p><i class="fas fa-map-marked-alt icon-color"></i> <%= igloo.address %></p>
           </div>
         </div>
       <% end %>
