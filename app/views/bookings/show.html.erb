@@ -19,9 +19,9 @@
     <div class="booking-content">
       <div class="book-info">
           <h3><%#= @igloo.address %></h3>
-      <div class="book-date">
+      <div class="book-date d-flex justify-content-center">
 
-      <div class="igloo-card">
+      <div class="igloo-card reduce">
         <div class="igloo-image">
           <%= link_to igloo_path(@booking.igloo) do %>
           <%= cl_image_tag @booking.igloo.photos.first.key %>
